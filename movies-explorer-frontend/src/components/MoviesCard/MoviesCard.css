@@ -1,0 +1,84 @@
+.card {
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 6px;
+  box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.08);
+  background: rgb(34, 34, 34);
+}
+
+.name-time {
+  display: flex;
+  justify-content: space-between;
+  padding: 18px;
+}
+
+.movie-title {
+  margin: 0;
+  padding: 0;
+  font-family: Inter;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 18px;
+  letter-spacing: 0px;
+}
+
+.movie-time {
+  color: rgb(139, 139, 139);
+  font-family: Inter;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0px;
+}
+
+.movie__img {
+  object-fit: cover;
+  margin-bottom: 18px;
+}
+
+.movie__save {
+  margin: auto;
+  padding: 9px 15px;
+  border-radius: 30px;
+  background-color: rgb(49, 49, 49);
+  color: rgb(255, 255, 255);
+  font-family: Inter;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 11px;
+  border: none;
+  margin-bottom: 18px;
+}
+
+.movie__save:active {
+  background-color: #ee3465;
+  background-image: url('../../images/checkmark.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 8px;
+}
+
+@media screen and (max-width: 500px) {
+  .card {
+    max-width: 300px;
+  }
+  .name-time {
+    padding: 14px;
+  }
+  .movie-title {
+    font-size: 12px;
+  }
+  .movie-time {
+    font-size: 10px;
+  }
+  .movie__img {
+    margin-bottom: 14px;
+  }
+  .movie__save {
+    width: 100px;
+    height: 29px;
+    margin-bottom: 14px;
+    padding: 0;
+  }
+}

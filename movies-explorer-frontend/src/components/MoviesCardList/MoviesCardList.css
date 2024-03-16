@@ -1,0 +1,41 @@
+.moviesCardList {
+  padding: 50px 10px 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cards__list {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: center;
+}
+
+.cards__more {
+  width: 90%;
+  margin: 0;
+  padding: 0;
+  border-radius: 6px;
+  background: rgb(47, 47, 47);
+  color: rgb(255, 255, 255);
+  font-family: Inter;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 15px;
+  padding: 11px 0 9px;
+  border: none;
+}
+
+@media screen and (max-width: 1110px) {
+}
+
+@media screen and (max-width: 500px) {
+  .cards__list {
+    gap: 16px;
+    margin-bottom: 50px;
+  }
+}
