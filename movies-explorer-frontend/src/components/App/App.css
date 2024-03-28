@@ -11,3 +11,6 @@
   -moz-text-size-adjust: 100%;
   text-rendering: optimizeLegibility;
 }
+button {
+  cursor: pointer;
+}

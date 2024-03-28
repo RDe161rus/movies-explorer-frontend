@@ -18,7 +18,7 @@ function MoviesCardList() {
         <MoviesCard />
         <MoviesCard />
       </ul>
-      <button className="cards__more">еще</button>
+      <button type='submit' className="cards__more-btn">еще</button>
     </section>
   );
 }

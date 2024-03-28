@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import './Portfolio.css';
 
 function Portfolio() {
@@ -11,6 +10,7 @@ function Portfolio() {
             href="https://rde161rus.github.io/how-to-learn/"
             className="portfolio__link"
             target="_blank"
+            rel="noreferrer"
           >
             Статичный сайт
             <span className="portfolio__arrow">&#129109;</span>
@@ -21,13 +21,19 @@ function Portfolio() {
             href="https://rde161rus.github.io/yet-another-project/"
             className="portfolio__link"
             target="_blank"
+            rel="noreferrer"
           >
             Адаптивный сайт
             <span className="portfolio__arrow">&#129109;</span>
           </a>
         </li>
         <li className="portfolio__info">
-          <a href="https://rde161rus.github.io/sign-in" className="portfolio__link" target="_blank">
+          <a
+            href="https://rde161rus.github.io/sign-in"
+            className="portfolio__link"
+            target="_blank"
+            rel="noreferrer"
+          >
             Одностраничное приложение
             <span className="portfolio__arrow">&#129109;</span>
           </a>

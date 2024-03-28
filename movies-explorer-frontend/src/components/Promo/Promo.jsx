@@ -12,6 +12,7 @@ function Promo() {
           href="https://practicum.yandex.ru/frontend-developer/?from=catalog"
           className="promo__link"
           target="_blank"
+          rel="noreferrer"
         >
           Узнать больше
         </a>

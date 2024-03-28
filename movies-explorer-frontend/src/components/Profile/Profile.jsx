@@ -5,20 +5,33 @@ function Profile() {
   return (
     <section className="profile">
       <div className="profile__content">
-        <h2 className="profile__greetings">Привет, Виталий!</h2>
+        <h2 className="profile__title">Привет, Виталий!</h2>
 
         <form className="profile__form">
-          <div className="profile__name">
-            <span className="profile__span">Имя</span>
-            <input className="profile__input" type="text" />
+          <div className="profile__input-container">
+            <label className="profile__input-name">Имя</label>
+            <input
+              type="text"
+              placeholder="Введите имя"
+              minLength="2"
+              maxLength="40"
+              className="profile__input"
+              defaultValue="Виталий"
+            />
           </div>
-          <div className="profile__name">
-            <span className="profile__span">E-mail</span>
-            <input className="profile__input" type="text" />
+          <div className="profile__input-container">
+            <label className="profile__input-name">E-mail</label>
+            <input
+              type="email"
+              placeholder="Введите почту"
+              className="profile__input"
+              defaultValue="pochta@yandex.ru"
+            />
           </div>
         </form>
-
-        <button className="profile__btn-edit">Редактировать</button>
+        <button type="button" className="profile__btn-edit">
+          Редактировать
+        </button>
         <Link to="/" className="profile__btn-exit">
           Выйти из аккаунта
         </Link>

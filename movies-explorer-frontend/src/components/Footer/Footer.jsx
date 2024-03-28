@@ -1,10 +1,8 @@
-import { Link } from 'react-router-dom';
 import './Footer.css';
 
 function Footer() {
   return (
-    <>
-      {/* <footer className="footer">
+    <footer className="footer">
       <div className="footer__title">Учебный проект Яндекс.Практикум х BeatFilm.</div>
       <div className="footer__info">
         <span className="footer__time">&copy; {new Date().getFullYear()}. Денис Растрепин</span>
@@ -17,8 +15,7 @@ function Footer() {
           </a>
         </div>
       </div>
-    </footer> */}
-    </>
+    </footer> 
   );
 }
 
