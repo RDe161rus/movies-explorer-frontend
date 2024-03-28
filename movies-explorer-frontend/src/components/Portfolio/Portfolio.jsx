@@ -29,7 +29,7 @@ function Portfolio() {
         </li>
         <li className="portfolio__info">
           <a
-            href="https://rde161rus.github.io/sign-in"
+            href="https://rde161rus.github.io/mesto/"
             className="portfolio__link"
             target="_blank"
             rel="noreferrer"

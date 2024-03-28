@@ -61,7 +61,26 @@
   background-repeat: no-repeat;
   background-size: 8px;
 } */
-
+@media screen and (max-width: 800px) {
+  .card {
+    max-width: 342px;
+  }
+  .card__name-time {
+    padding: 15px;
+  }
+  .card-time {
+    font-size: 13px;
+  }
+  .card__img {
+    margin-bottom: 14px;
+  }
+  .card__btn-save {
+    width: 100px;
+    height: 29px;
+    margin-bottom: 14px;
+    padding: 0;
+  }
+}
 @media screen and (max-width: 500px) {
   .card {
     max-width: 300px;

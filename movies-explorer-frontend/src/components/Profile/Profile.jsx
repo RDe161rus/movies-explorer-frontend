@@ -8,26 +8,25 @@ function Profile() {
         <h2 className="profile__title">Привет, Виталий!</h2>
 
         <form className="profile__form">
-          <div className="profile__input-container">
+          <fieldset className="profile__input-container">
             <label className="profile__input-name">Имя</label>
             <input
               type="text"
-              placeholder="Введите имя"
               minLength="2"
               maxLength="40"
               className="profile__input"
               defaultValue="Виталий"
             />
-          </div>
-          <div className="profile__input-container">
+          </fieldset>
+          <fieldset className="profile__input-container">
             <label className="profile__input-name">E-mail</label>
             <input
               type="email"
-              placeholder="Введите почту"
               className="profile__input"
               defaultValue="pochta@yandex.ru"
+              required
             />
-          </div>
+          </fieldset>
         </form>
         <button type="button" className="profile__btn-edit">
           Редактировать
