@@ -3,7 +3,7 @@ import './MoviesCardList.css';
 
 function MoviesCardList() {
   return (
-    <section className="moviesCardList">
+    <section className="movies-cardlist">
       <ul className="cards__list">
         <MoviesCard />
         <MoviesCard />
@@ -18,7 +18,9 @@ function MoviesCardList() {
         <MoviesCard />
         <MoviesCard />
       </ul>
-      <button type='submit' className="cards__more-btn">еще</button>
+      <button type="submit" className="cards__more-btn">
+        еще
+      </button>
     </section>
   );
 }

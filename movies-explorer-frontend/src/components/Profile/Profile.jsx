@@ -16,6 +16,7 @@ function Profile() {
               maxLength="40"
               className="profile__input"
               defaultValue="Виталий"
+              placeholder="Введите Имя"
             />
           </fieldset>
           <fieldset className="profile__input-container">
@@ -24,6 +25,7 @@ function Profile() {
               type="email"
               className="profile__input"
               defaultValue="pochta@yandex.ru"
+              placeholder="Введите E-mail"
               required
             />
           </fieldset>

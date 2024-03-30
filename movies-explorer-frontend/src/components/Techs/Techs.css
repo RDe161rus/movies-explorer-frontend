@@ -40,9 +40,9 @@
   margin: 0;
   padding: 0;
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
   justify-content: center;
-  align-items: center;
 }
 
 .techs__program {
@@ -62,7 +62,7 @@
   letter-spacing: -4%;
 }
 
-@media screen and (max-width: 1110px) {
+@media screen and (max-width: 850px) {
   .techs {
     padding: 90px 50px;
   }
@@ -79,6 +79,8 @@
   }
 
   .techs__program {
+    width: 84px;
+    height: 57px;
     line-height: 15px;
   }
 }
@@ -104,9 +106,7 @@
     letter-spacing: -4%;
   }
   .techs__programs {
-    flex-wrap: wrap;
-  }
-  .techs__program {
-    line-height: 15px;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
   }
 }

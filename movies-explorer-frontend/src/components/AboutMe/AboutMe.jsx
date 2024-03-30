@@ -13,9 +13,12 @@ function AboutMe() {
             сын. Увлекаюсь мини-футболом. Недавно начал кодить. После того, как прошёл курс по
             веб-разработке, начал заниматься фриланс-заказами и ушёл с постоянной работы.
           </p>
-          <a href="https://github.com/RDe161rus" 
-          className="about-me__link" 
-          target="_blank">
+          <a
+            href="https://github.com/RDe161rus"
+            className="about-me__link"
+            target="_blank"
+            rel="noreferrer"
+          >
             Github
           </a>
         </div>

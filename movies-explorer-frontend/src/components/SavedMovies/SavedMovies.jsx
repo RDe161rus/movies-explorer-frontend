@@ -4,10 +4,10 @@ import './SavedMovies.css';
 
 function SavedMovies() {
   return (
-    <>
+    <main>
       <SearchForm />
       <MoviesCardList />
-    </>
+    </main>
   );
 }
 

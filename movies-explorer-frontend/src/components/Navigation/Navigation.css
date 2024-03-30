@@ -10,6 +10,7 @@
   background-color: rgba(0, 0, 0, 30%);
   top: 0;
   left: 0;
+  z-index: 1;
 }
 .navigation__open {
   visibility: visible;

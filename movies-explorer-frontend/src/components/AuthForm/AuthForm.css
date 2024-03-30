@@ -1,4 +1,4 @@
-.authForm {
+.auth-form {
   width: 100%;
   min-height: 700px;
   box-sizing: border-box;
@@ -8,11 +8,11 @@
   justify-content: space-between;
 }
 
-.authForm__content {
+.auth-form__content {
   display: flex;
   flex-direction: column;
 }
-.authForm__logo {
+.auth-form__logo {
   background-image: url('../../images/HeaderLogo.svg');
   background-size: contain;
   background-repeat: no-repeat;
@@ -20,11 +20,11 @@
   height: 38px;
   margin-bottom: 40px;
 }
-.authForm__logo:hover {
+.auth-form__logo:hover {
   opacity: 0.7;
 }
 
-.authForm__title {
+.auth-form__title {
   color: rgb(255, 255, 255);
   font-size: 24px;
   font-weight: 500;
@@ -33,12 +33,12 @@
   margin: 0 0 40px 0;
 }
 
-.authForm__form {
+.auth-form__form {
   width: 100%;
   display: flex;
   flex-direction: column;
 }
-.authForm__input-container {
+.auth-form__input-container {
   display: flex;
   flex-direction: column;
   margin: 0;
@@ -46,7 +46,7 @@
   border: none;
 }
 
-.authForm__input-title {
+.auth-form__input-title {
   color: rgb(139, 139, 139);
   font-weight: 400;
   font-size: 10px;
@@ -55,7 +55,7 @@
   text-align: left;
 }
 
-.authForm__input {
+.auth-form__input {
   margin: 0 0 24px 0;
   padding: 0 0 10px 0;
   box-sizing: border-box;
@@ -67,7 +67,9 @@
   font-weight: 400;
   border: none;
   border-bottom: 1px solid rgb(66, 66, 66);
-  outline: none;
+}
+.auth-form__input:focus {
+  outline: 1px solid rgb(66, 66, 66);
 }
 
 .auth__input-error {
@@ -78,7 +80,7 @@
   text-align: left;
 }
 
-.authForm__btn {
+.auth-form__btn {
   margin: 130px 0 16px 0;
   padding: 0;
   width: 100%;
@@ -90,14 +92,14 @@
   font-size: 14px;
 }
 
-.authForm__reg-log {
+.auth-form__reg-log {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 6px;
 }
 
-.authForm__text {
+.auth-form__text {
   color: rgb(139, 139, 139);
   margin: 0;
   padding: 0;
@@ -105,7 +107,7 @@
   font-weight: 400;
   line-height: 17px;
 }
-.authForm__link {
+.auth-form__link {
   color: rgb(66, 133, 244);
   text-decoration: none;
   font-size: 14px;
@@ -114,10 +116,10 @@
 }
 
 @media screen and (max-width: 800px) {
-  .authForm {
+  .auth-form {
     padding-top: 232px;
   }
-  .authForm__input {
+  .auth-form__input {
     font-size: 14px;
     line-height: 17px;
     padding-bottom: 12px;
@@ -126,33 +128,33 @@
 }
 
 @media screen and (max-width: 500px) {
-  .authForm {
+  .auth-form {
     padding: 64px 30px 30px;
   }
-  .authForm__content {
+  .auth-form__content {
     align-items: center;
   }
-  .authForm__logo {
+  .auth-form__logo {
     margin-bottom: 55px;
   }
 
-  .authForm__title {
+  .auth-form__title {
     margin-bottom: 80px;
   }
 
-  .authForm__input {
+  .auth-form__input {
     line-height: 15px;
     padding-bottom: 10px;
   }
-  .authForm__btn {
+  .auth-form__btn {
     margin-top: 234px;
     margin-bottom: 14px;
     font-size: 12px;
   }
-  .authForm__text {
+  .auth-form__text {
     font-size: 12px;
   }
-  .authForm__link {
+  .auth-form__link {
     font-size: 12px;
   }
 }

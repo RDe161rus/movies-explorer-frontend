@@ -1,4 +1,4 @@
-.notfound {
+.not-found {
   color: rgb(255, 255, 255);
   display: flex;
   justify-content: center;
@@ -7,7 +7,7 @@
   padding: 236px 10px 30px;
 }
 
-.notfound__title {
+.not-found__title {
   margin: 0;
   padding: 0;
   font-size: 140px;
@@ -16,7 +16,7 @@
   letter-spacing: 0%;
   margin-bottom: 4px;
 }
-.notfound__subtitle {
+.not-found__subtitle {
   margin: 0;
   padding: 0;
   font-size: 16px;
@@ -26,32 +26,32 @@
   margin-bottom: 184px;
 }
 
-.notfound__exit {
+.not-found__exit {
   color: rgb(66, 133, 244);
   font-size: 14px;
   font-weight: 400;
   line-height: 17px;
   text-decoration: none;
 }
-.notfound__exit:hover {
+.not-found__exit:hover {
   opacity: 0.7;
 }
 
 @media screen and (max-width: 500px) {
-  .notfound {
+  .not-found {
     padding-top: 329px;
   }
-  .notfound__title {
+  .not-found__title {
     font-size: 80px;
     line-height: 97px;
     margin-bottom: 10px;
   }
-  .notfound__subtitle {
+  .not-found__subtitle {
     margin-bottom: 284px;
     font-size: 12px;
     line-height: 15px;
   }
-  .notfound__exit {
+  .not-found__exit {
     font-size: 12px;
   }
 }

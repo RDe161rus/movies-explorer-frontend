@@ -20,7 +20,6 @@ function App() {
       {isHeaderLocation && <Header />}
       <Routes>
         <Route path="/" element={<Main />} />
-
         <Route path="/signup" element={<AuthForm />} />
         <Route path="/signin" element={<AuthForm />} />
         <Route path="/signup" element={<AuthForm />} />

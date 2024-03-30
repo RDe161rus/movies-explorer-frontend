@@ -9,7 +9,7 @@ function MoviesCard() {
         <span className="card-time">0ч 42м</span>
       </div>
       <img src={movieCard} alt="Обложка фильма" className="card__img" />
-      <button className="card__btn-save">Сохранить</button>
+      <button className="card__btn-save"></button>
     </li>
   );
 }
