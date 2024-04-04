@@ -1,0 +1,101 @@
+.card {
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 6px;
+  box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.08);
+  background: rgb(34, 34, 34);
+}
+
+.card__name-time {
+  display: flex;
+  justify-content: space-between;
+  padding: 18px;
+}
+
+.card-title {
+  margin: 0;
+  padding: 0;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 18px;
+  letter-spacing: 0px;
+}
+
+.card-time {
+  color: rgb(139, 139, 139);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0px;
+}
+
+.card__img {
+  object-fit: cover;
+  margin-bottom: 18px;
+}
+
+.card__btn-save {
+  margin: auto;
+  padding: 0;
+  border-radius: 30px;
+  background-color: rgb(49, 49, 49);
+  border: none;
+  margin-bottom: 18px;
+  background: url('../../images/save-movie.svg') center / cover no-repeat;
+  width: 100px;
+  height: 29px;
+}
+.card__btn-save:hover {
+  opacity: 0.7;
+}
+
+.card__btn-save_active {
+  background: url('../../images/save-movie-red.svg') center / cover no-repeat;
+}
+.card__btn-save_delete {
+  background: url('../../images/delete-movie.svg') center / cover no-repeat;
+}
+@media screen and (max-width: 800px) {
+  .card {
+    max-width: 342px;
+  }
+  .card__name-time {
+    padding: 15px;
+  }
+  .card-time {
+    font-size: 13px;
+  }
+  .card__img {
+    margin-bottom: 14px;
+  }
+  .card__btn-save {
+    width: 100px;
+    height: 29px;
+    margin-bottom: 14px;
+    padding: 0;
+  }
+}
+@media screen and (max-width: 500px) {
+  .card {
+    max-width: 300px;
+  }
+  .card__name-time {
+    padding: 14px;
+  }
+  .card-title {
+    font-size: 12px;
+  }
+  .card-time {
+    font-size: 10px;
+  }
+  .card__img {
+    margin-bottom: 14px;
+  }
+  .card__btn-save {
+    width: 100px;
+    height: 29px;
+    margin-bottom: 14px;
+    padding: 0;
+  }
+}
