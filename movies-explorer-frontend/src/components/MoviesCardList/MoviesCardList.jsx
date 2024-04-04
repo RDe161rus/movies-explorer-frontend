@@ -3,7 +3,7 @@ import './MoviesCardList.css';
 
 function MoviesCardList() {
   return (
-    <section className="movies-cardlist">
+    <section className="cards">
       <ul className="cards__list">
         <MoviesCard />
         <MoviesCard />

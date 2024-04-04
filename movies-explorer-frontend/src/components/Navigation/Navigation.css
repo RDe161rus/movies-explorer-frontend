@@ -4,7 +4,7 @@
   opacity: 0;
   transition: visibility 0.4s, opacity 0.4s;
   justify-content: flex-end;
-  position: absolute;
+  position: fixed;
   width: 100%;
   min-height: 100%;
   background-color: rgba(0, 0, 0, 30%);
@@ -40,7 +40,7 @@
   list-style-type: none;
   margin: 0;
   padding: 0;
-  margin-bottom: 661px;
+  margin-bottom: 380px;
 }
 .navigation__item {
   text-align: center;
