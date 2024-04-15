@@ -1,85 +1,135 @@
-const URL = 'https://api.movies.nomoredomainsmonster.ru';
-
-const checkResponse = res => {
-  return res.ok ? res.json() : Promise.reject(`Ошибка: ${res.status}`);
-};
-
-export const login = (email, password) => {
-  return fetch(`${URL}/signin`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({ email, password })
-  }).then(res => checkResponse(res));
-};
-
-export const register = (name, email, password) => {
-  return fetch(`${URL}/signup`, {
-    method: 'POST',
-    headers: {
-      Accept: 'application/json',
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({ name, email, password })
-  }).then(res => checkResponse(res));
-};
-
-export const checkToken = token => {
-  return fetch(`${URL}/users/me`, {
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: token
+class MainApi {
+  constructor(config) {
+    this._url = config.url;
+    this._headers = config.headers;
+  }
+  async _checkResponse(data) {
+    const res = await data.json();
+    if (data.ok === true) {
+      return res;
     }
-  }).then(res => checkResponse(res));
-};
+    return Promise.reject(`Ошибка: ${res.message}`);
+  }
 
-export const saveMovie = data => {
-  return fetch(`${URL}/movies`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: localStorage.getItem('token')
-    },
-    body: JSON.stringify(data)
-  }).then(res => checkResponse(res));
-};
-
-export const getSaveMovies = () => {
-  return fetch(`${URL}/movies`, {
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: localStorage.getItem('token')
+  _getRequestOptions(method, body) {
+    const requestOptions = {
+      method: method,
+      headers: this._headers,
+      credentials: 'include'
+    };
+    if (body) {
+      requestOptions.body = JSON.stringify(body);
     }
-  }).then(res => checkResponse(res));
-};
+    return requestOptions;
+  }
 
-export const deleteMovie = movieId => {
-  return fetch(`${URL}/movies/${movieId}`, {
-    method: 'DELETE',
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: localStorage.getItem('token')
+  async register({ name, email, password }) {
+    try {
+      const res = await fetch(
+        `${this._url}/signup`,
+        this._getRequestOptions('POST', {
+          name: name,
+          email: email,
+          password: password
+        })
+      );
+      return this._checkResponse(res);
+    } catch (err) {
+      console.error('Ошибка:', err.message);
     }
-  }).then(res => checkResponse(res));
-};
+  }
 
-export const getUser = () => {
-  return fetch(`${URL}/users/me`, {
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: localStorage.getItem('token')
+  async login({ email, password }) {
+    try {
+      const res = await fetch(
+        `${this._url}/signin`,
+        this._getRequestOptions('POST', {
+          email: email,
+          password: password
+        })
+      );
+      return this._checkResponse(res);
+    } catch (err) {
+      console.error('Ошибка:', err.message);
     }
-  }).then(res => checkResponse(res));
-};
+  }
 
-export const editUser = dataUser => {
-  return fetch(`${URL}/users/me`, {
-    method: 'PATCH',
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: localStorage.getItem('token')
-    },
-    body: JSON.stringify(dataUser)
-  }).then(res => checkResponse(res));
-};
+  async createMovies(data) {
+    try {
+      const res = await fetch(
+        `${this._url}/movies`,
+        this._getRequestOptions('POST', {
+          country: data.country,
+          director: data.director,
+          duration: data.duration,
+          year: data.year,
+          description: data.description,
+          image: data.image,
+          trailerLink: data.trailerLink,
+          thumbnail: data.thumbnail,
+          movieId: data.id,
+          nameRU: data.nameRU,
+          nameEN: data.nameEN
+        })
+      );
+      return this._checkResponse(res);
+    } catch (err) {
+      console.error('Ошибка:', err.message);
+    }
+  }
+
+  async deleteMovie(movieId) {
+    try {
+      const res = await fetch(`${this._url}/movies/${movieId}`, this._getRequestOptions('DELETE'));
+      return this._checkResponse(res);
+    } catch (err) {
+      console.error('Ошибка:', err.message);
+    }
+  }
+
+  async getMovies() {
+    try {
+      const res = await fetch(`${this._url}/movies`, this._getRequestOptions('GET'));
+      return this._checkResponse(res);
+    } catch (err) {
+      console.error('Ошибка:', err.message);
+    }
+  }
+
+  async updateUser({ name, email }) {
+    try {
+      const res = await fetch(
+        `${this._url}/users/me`,
+        this._getRequestOptions('PATCH', {
+          name: name,
+          email: email
+        })
+      );
+      return this._checkResponse(res);
+    } catch (err) {
+      console.error('Ошибка:', err.message);
+    }
+  }
+  async getContent() {
+    try {
+      const res = await fetch(`${this._url}/users/me`, this._getRequestOptions('GET'));
+      return this._checkResponse(res);
+    } catch (err) {
+      console.error('Ошибка:', err.message);
+    }
+  }
+
+  async logout() {
+    try {
+      const res = await fetch(`${this._url}/logout`, this._getRequestOptions('POST'));
+      return this._checkResponse(res);
+    } catch (err) {
+      console.error('Ошибка:', err.message);
+    }
+  }
+}
+
+export const mainApi = new MainApi({
+  url: 'https://api.rd-movies.nomoredomainsmonster.ru',
+  headers: { 'Content-Type': 'application/json' }
+});

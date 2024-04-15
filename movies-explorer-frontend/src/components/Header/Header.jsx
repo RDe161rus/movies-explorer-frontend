@@ -1,18 +1,16 @@
 import { Link, useLocation } from 'react-router-dom';
 import './Header.css';
 import Navigation from '../Navigation/Navigation';
-import { useState } from 'react';
 
-function Header() {
+function Header({isLoggedIn}) {
   const location = useLocation().pathname;
   const isLanding = location === '/';
-  const isLoggedIn = useState(false);
 
   const openNav = () => document.querySelector('.navigation').classList.add('navigation__open');
 
   return (
     <>
-      {isLanding && isLoggedIn ? (
+      {!isLoggedIn ? (
         <header className={`header ${isLanding ? 'header_color' : ''}`}>
           <Link to="/" className="header__logo" alt="logo" />
           <nav className="header__nav">

@@ -1,9 +1,27 @@
-import { Link, useLocation } from 'react-router-dom';
 import './AuthForm.css';
+import { Link, useLocation } from 'react-router-dom';
+import Notification from '../Notification/Notification';
+import useFormValid from '../../hooks/useFormValid';
 
-function AuthForm() {
+function AuthForm({ onRegister, error, resetErr, onLogin }) {
   const location = useLocation().pathname;
   const isRegister = location === '/signup';
+
+  const { values, messages, isValid, handleChange, resetForm } = useFormValid();
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    if (isRegister) {
+      onRegister(values);
+    } else {
+      onLogin(values);
+    }
+  }
+
+  function handleLinkClick() {
+    resetForm();
+    resetErr();
+  }
   return (
     <main>
       <section className="auth-form">
@@ -11,7 +29,7 @@ function AuthForm() {
           <Link to="/" className="auth-form__logo"></Link>
           <h2 className="auth-form__title">{isRegister ? 'Добро пожаловать!' : 'Рады видеть!'}</h2>
 
-          <form className="auth-form__form" autoComplete="off">
+          <form className="auth-form__form">
             {isRegister && (
               <fieldset className="auth-form__input-container">
                 <label className="auth-form__input-title">Имя</label>
@@ -22,9 +40,11 @@ function AuthForm() {
                   name="name"
                   minLength="2"
                   maxLength="40"
+                  onChange={handleChange}
+                  value={values.name || ''}
                   required
                 />
-                <span className="auth__input-error"></span>
+                <span className="auth__input-error">{messages.name}</span>
               </fieldset>
             )}
             <fieldset className="auth-form__input-container">
@@ -36,9 +56,11 @@ function AuthForm() {
                 name="email"
                 minLength="2"
                 maxLength="40"
+                onChange={handleChange}
+                value={values.email || ''}
                 required
               />
-              <span className="auth__input-error"></span>
+              <span className="auth__input-error">{messages.email}</span>
               <label className="auth-form__input-title">Пароль</label>
               <input
                 required
@@ -48,28 +70,37 @@ function AuthForm() {
                 name="password"
                 minLength="6"
                 maxLength="40"
+                onChange={handleChange}
+                value={values.password || ''}
               />
-              <span className="auth__input-error"></span>
+              <span className="auth__input-error">{messages.password}</span>
             </fieldset>
-            <button type="submit" className="auth-form__btn">
-              {isRegister ? 'Зарегистрироваться' : 'Войти'}
-            </button>
+            <div className="auth__container-btn">
+              <Notification message={error} isSuccess={false} />
+              <button
+                type="submit"
+                className="auth-form__btn"
+                onClick={handleSubmit}
+                disabled={!isValid}
+              >
+                {isRegister ? 'Зарегистрироваться' : 'Войти'}
+              </button>
+              <div className="auth-form__reg-log">
+                <p className="auth-form__text">
+                  {isRegister ? 'Уже зарегистрированы?' : 'Еще не зарегистрированы? '}
+                </p>
+                {isRegister ? (
+                  <Link to="/signin" className="auth-form__link" onClick={handleLinkClick}>
+                    Войти
+                  </Link>
+                ) : (
+                  <Link to="/signup" className="auth-form__link" onClick={handleLinkClick}>
+                    Регистрация
+                  </Link>
+                )}
+              </div>
+            </div>
           </form>
-
-          <div className="auth-form__reg-log">
-            <p className="auth-form__text">
-              {isRegister ? 'Уже зарегистрированы?' : 'Еще не зарегистрированы? '}
-            </p>
-            {isRegister ? (
-              <Link to="/signin" className="auth-form__link">
-                Войти
-              </Link>
-            ) : (
-              <Link to="/signup" className="auth-form__link">
-                Регистрация
-              </Link>
-            )}
-          </div>
         </div>
       </section>
     </main>

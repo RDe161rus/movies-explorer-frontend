@@ -8,3 +8,8 @@
 
 ### Технологии и стек:
 `HTML5` `CSS3` `JS6` `BEM` `Git` `Адаптивная верстка` `Кроссбраузерная верстка` `Flexbox` `NPM` `React`
+
+### Адрес на проект:
+IP 84.201.158.56
+Backend https://api.rd-movies.nomoredomainsmonster.ru
+Frontend 
